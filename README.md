@@ -1,2 +1,2 @@
-# NeurIPS2019-DM2C
+# DM2C
  
