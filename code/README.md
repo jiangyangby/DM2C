@@ -28,6 +28,7 @@ python3 train.py --dataset wikipedia --data_dir data/wikipedia \
 --pretrain load_ae --img_cptpath cpt/wikipedia_img_pretrain_checkpt.pkl --txt_cptpath cpt/wikipedia_txt_pretrain_checkpt.pkl \
 --lr_g 1e-4 --lr_d 5e-5 --lr_ae 5e-4 --gan_type wasserstein --n_epochs 220 --weight_decay 0 --lamda3 0.5 --lamda1 1 --cpt_dir cpt --seed 2018
 ```
+(I'm not sure if this is the final version of the code. But I will check the code again when I have spare time.)
 
 ## Citation
 Please cite our paper if you use this code in your own work:
