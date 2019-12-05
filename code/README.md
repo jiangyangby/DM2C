@@ -14,7 +14,7 @@ This is a PyTorch implementation of the DM2C model as described in our paper:
 The processed mixed-modal datasets are provided in `data/`. You may find the original Wikipedia and NUS-WIDE-10K datasets (with fully paired samples) [here](https://github.com/sunpeng981712364/ACMR_demo/tree/master/data).
 
 ## Pre-train the modality-specific auto-encoders
-Sample code:
+Sample command:
 ```
 python train.py --dataset wikipedia --data_dir data/wikipedia \
 --pretrain img --lr_ae 1e-4 --log_freq 15 --n_epochs 150
@@ -26,7 +26,7 @@ python train.py --dataset wikipedia --data_dir data/wikipedia \
 * Set the learning rate for cross-modal mappings (generators) `lr_g`, discriminators `lr_d`, and auto-encoders `lr_ae`.
 * Set the coefficient for cycle consistency loss `lamda1` and adversarial loss `lamda3`.
 
-Here is a sample code:
+Here is a sample command:
 ```
 python3 train.py --dataset wikipedia --data_dir data/wikipedia \
 --pretrain load_ae --img_cptpath cpt/wikipedia_img_pretrain_checkpt.pkl --txt_cptpath cpt/wikipedia_txt_pretrain_checkpt.pkl \
