@@ -28,8 +28,6 @@ parser.add_argument("--b2", type=float, default=0.999,
 parser.add_argument("--weight_decay", type=float, default=1e-4)
 parser.add_argument("--lamda1", type=float, default=1.0,
                     help="reg for cycle consistency")
-parser.add_argument("--lamda2", type=float, default=1.0,  # 1.0
-                    help="reg for reconstruction loss after cycle mapping")
 parser.add_argument("--lamda3", type=float, default=1.0,  # 1.0
                     help="reg for adversarial loss")
 parser.add_argument("--gan_type", type=str, default='naive',

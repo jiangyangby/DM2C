@@ -22,7 +22,7 @@ logging.basicConfig(level=logging.INFO,
                     format='%(asctime)s: %(name)s [%(levelname)s] %(message)s')
 info_string1 = ('Epoch: %3d/%3d|Batch: %2d/%2d||D_loss: %.4f|D1_loss: %.4f|'
                 'D2_loss: %.4f||G_loss: %.4f|R1_loss: %.4f|R2_loss: %.4f|R121_loss: %.4f|'
-                'R212_loss: %.4f|R121r_loss: %.4f|R212r_loss: %.4f')
+                'R212_loss: %.4f')
 
 
 class DeepAE(nn.Module):
@@ -208,7 +208,7 @@ class MultimodalGAN:
                 txt_feats, self.txtAE.decoder(txt_latent_recon))
             recon_loss = img_recon_loss + txt_recon_loss +\
                 (img_cycle_loss + txt_cycle_loss) * self.args.lamda1 +\
-                (img_cycle_recon_loss + txt_cycle_recon_loss) * self.args.lamda2
+                (img_cycle_recon_loss + txt_cycle_recon_loss)
 
             img_real = torch.ones(img_batch_size, 1).cuda()
             img_fake = torch.zeros(img_batch_size, 1).cuda()
@@ -264,8 +264,7 @@ class MultimodalGAN:
                     D_loss.item(), img_D_loss.item(), txt_D_loss.item(),
                     G_loss.item(), img_recon_loss.item(),
                     txt_recon_loss.item(), img_cycle_loss.item(),
-                    txt_cycle_loss.item(), img_cycle_recon_loss.item(),
-                    txt_cycle_recon_loss.item()))
+                    txt_cycle_loss.item()))
                 self.writer.add_scalar(
                     'Train/G_loss', G_loss.item(),
                     step + len(self.train_loader) * epoch)
