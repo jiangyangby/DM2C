@@ -17,13 +17,16 @@ The processed mixed-modal datasets are provided in `data/`. You may find the ori
 Sample code:
 ```
 python train.py --dataset wikipedia --data_dir data/wikipedia \
---pretrain img --lr_ae 1e-4 --log_freq 15 --n_epochs 200
+--pretrain img --lr_ae 1e-4 --log_freq 15 --n_epochs 150
 python train.py --dataset wikipedia --data_dir data/wikipedia \
---pretrain txt --lr_ae 1e-5 --log_freq 15 --n_epochs 200
+--pretrain txt --lr_ae 1e-5 --log_freq 15 --n_epochs 150
 ```
 
 ## Train the DM2C model
-Sample code:
+* Set the learning rate for cross-modal mappings (generators) `lr_g`, discriminators `lr_d`, and auto-encoders `lr_ae`.
+* Set the coefficient for cycle consistency loss `lamda1` and adversarial loss `lamda3`.
+
+Here is a sample code:
 ```
 python3 train.py --dataset wikipedia --data_dir data/wikipedia \
 --pretrain load_ae --img_cptpath cpt/wikipedia_img_pretrain_checkpt.pkl --txt_cptpath cpt/wikipedia_txt_pretrain_checkpt.pkl \
