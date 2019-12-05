@@ -8,6 +8,7 @@ This is a PyTorch implementation of the DM2C model as described in our paper:
 - numpy
 - sklearn
 - scipy
+- munkres
 
 ## Data
 The processed mixed-modal datasets are provided in `data/`. You may find the original Wikipedia and NUS-WIDE-10K datasets (with fully paired samples) [here](https://github.com/sunpeng981712364/ACMR_demo/tree/master/data).
