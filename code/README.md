@@ -11,7 +11,9 @@ This is a PyTorch implementation of the DM2C model as described in our paper:
 - munkres
 
 ## Data
-The processed mixed-modal datasets are provided in `data/`. You may find the original Wikipedia and NUS-WIDE-10K datasets (with fully paired samples) [here](https://github.com/sunpeng981712364/ACMR_demo/tree/master/data).
+The preprocessed mixed-modal datasets are provided in `data/`. You may find the original Wikipedia and NUS-WIDE-10K datasets (with fully paired samples) [here](https://github.com/sunpeng981712364/ACMR_demo/tree/master/data).
+
+Note that the preprocessing is a PCA on the original extracted features for each modality to reduce them into the same dimension (so that we can evaluate traditional methods like k-means). Thus the provided data include 2048d features for Wikipedia and 1000d features for NUS-WIDE-10K.
 
 ## Pre-train the modality-specific auto-encoders
 Sample command:
